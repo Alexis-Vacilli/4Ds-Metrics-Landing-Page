@@ -186,17 +186,52 @@ select {
     animation: button-loading-spinner 1s ease infinite;
 }
 
-@keyframes button-loading-spinner {
-    from {
-        transform: rotate(0turn);
-    }
+/* Preloader  */
+.loader-container{
+    font-size: 18px;
+    line-height: 1.6;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    min-height: 100vh;
+}
 
-    to {
-        transform: rotate(1turn);
-    }
+.loader {
+    height: 50px;
+    transform-origin: bottom center;
+    animation: rotate 3s linear infinite;
+}
+.square {
+    display: inline-block;
+    background-color: #222;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    transform: scale(0);
+    animation: grow 1.5s linear infinite;
+    margin: -10px;
+}
+
+.square:nth-child(2) {
+    background-color: #feb74a;
+    animation-delay: .75s;
+
 }
 
 
+@keyframes rotate{
+    to{
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes grow{
+   50% {
+       transform: scale(1);
+   } 
+}
 /* Navbar */
 .navbar {
     position: fixed;
@@ -313,7 +348,6 @@ select {
 
 /* Section services */
 .section-services {
-    height: 100vh;
     overflow: visible;
     background-color: var(--background-color);
     text-align: center;
@@ -642,16 +676,90 @@ ul {
 /* Section clients */
 
 .section-clients {
-    height: 70vh;
     background-color: var(--background-color);
     text-align: center;
 }
 
 .section-clients .container {
-    max-width: 1200px;
+    margin-top: 5rem;
+    max-width: 1300px;
 }
 
-.hoverdiv {
+.main-card {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    transition: all 1s ease;
+}
+
+.main-card .partner-cards {
+    width: calc(100% / 2 -10px);
+    display: flex;
+    justify-content: space-between;
+    margin: 0 20px;
+}
+
+.main-card .partner-cards .partner-card {
+    background: var(--secondary-background-color);
+    width: calc(100% / 4 - 30px);
+    padding: 30px;
+    border-radius: 15px;
+}
+
+.partner-cards .partner-card .partner-card-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.partner-cards .partner-card .partner-card-content .img {
+    width: 250px;
+    height: 100px;
+}
+
+.partner-card .partner-card-content .img img {
+    height: 100%;
+    width: 100%;
+    object-fit: scale-down;
+}
+
+.partner-card .partner-card-content .details .name {
+    font-size: 15px;
+    margin-bottom: 15px;
+    color: var(--font-color);
+    font-weight: 700;
+}
+
+.partner-card .partner-card-content .details .description {
+    font-size: 12px;
+    color: var(--font-color);
+}
+
+.partner-card .partner-card-content .media-icons {
+    display: flex;
+    margin-top: 20px;
+}
+
+.partner-card .partner-card-content .media-icons a {
+    height: 35px;
+    width: 35px;
+    color: var(--font-color);
+    background: #fff;
+    margin: 0 20px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 35px;
+    transition: all 0.4s ease;
+}
+
+.partner-card-content .media-icons a:hover {
+    border: 1px solid var(--font-color);
+}
+
+
+/* .hoverdiv {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -706,7 +814,7 @@ ul {
 
 .logo-slider .item:hover .hoverdiv {
     opacity: 1;
-}
+} */
 
 /* Contact us section */
 .section-contact-us {
@@ -1133,8 +1241,10 @@ form select:focus {
     }
 
     nav {
-        display: none;
+       display: none;
     }
+
+
 
     .hamburger {
         display: block;
@@ -1195,6 +1305,13 @@ form select:focus {
 
     /* Showcase section */
 
+    .section-about .container .video video {
+       margin-bottom: 4rem;
+    }
+
+    /* Section-services */
+    
+
     /* About section */
     .section-about .container .content {
         width: 100%;
@@ -1207,6 +1324,28 @@ form select:focus {
     /* Services section */
     .section-services .container .row .card {
         margin-top: 20px;
+    }
+
+      /* Section-partners */
+
+      .main-card .partner-cards {
+        width: calc(100% / 1 -10px);
+        display: flex;
+        flex-direction: column;
+        margin: 20px 0;
+
+    }
+
+    .price-card {
+        margin: auto;
+    }
+
+
+    .main-card .partner-cards .partner-card {
+        width: calc(100% / 1);
+        padding: 30px;
+        margin-bottom: 20px;
+        border-radius: 15px;
     }
 
     .popup {
