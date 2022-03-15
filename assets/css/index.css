@@ -1040,6 +1040,7 @@ form select:focus {
     filter: blur(20px);
     pointer-events: none;
     user-select: none;
+    overflow: hidden;
 }
 
 .popup {
@@ -1302,7 +1303,7 @@ form select:focus {
     .navbar {
         height: 110px;
     }
-
+    
     /* Showcase section */
 
     .section-about .container .video video {
@@ -1350,6 +1351,7 @@ form select:focus {
 
     .popup {
         width: 90%;
+        margin-top: 20px;
     }
 
     /* Footer */

@@ -5,6 +5,7 @@ const pageContainer = document.querySelector(".page-container");
 const loaderContainer = document.querySelector(".loader-container");
 
 const init = () => {
+  pageContainer.style.display = "none";
   setTimeout(() => {
     loader.style.opacity = "0";
     loader.style.display = "none";
@@ -64,31 +65,40 @@ const typed = new Typed(".auto-input", {
     document.querySelector("#signin-popup").classList.add("active");
     const blur = document.getElementById('blur');
     blur.classList.toggle('active');
+    const body = document.querySelector('.body');
+    body.style.overflow = "hidden";
   });
   // Get started
   getStartedBtn.addEventListener("click", () => {
     document.querySelector("#get-started-popup").classList.add("active");
     const blur = document.getElementById('blur');
     blur.classList.toggle('active');
+    const body = document.querySelector('.body');
+    body.style.overflow = "hidden";
   });
   // Free plan popup
   freePlanButton.addEventListener("click", ()=> {
     document.querySelector("#freePlan-popup").classList.add("active");
     const blur = document.getElementById('blur');
     blur.classList.toggle('active');
+    const body = document.querySelector('.body');
+    body.style.overflow = "hidden";
   })
   // Standard plan popup
   standardPlanButton.addEventListener("click", ()=> {
     document.querySelector("#standardPlan-popup").classList.add("active");
     const blur = document.getElementById('blur');
     blur.classList.toggle('active');
+    const body = document.querySelector('.body');
+    body.style.overflow = "hidden";
   })
   // Premium plan pop up
   premiumPlanButton.addEventListener("click", ()=> {
     document.querySelector("#premiumPlan-popup").classList.add("active");
     const blur = document.getElementById('blur');
     blur.classList.toggle('active');
-   
+    const body = document.querySelector('.body');
+    body.style.overflow = "hidden";
   })
 
   // Sevice cards
@@ -104,14 +114,18 @@ const typed = new Typed(".auto-input", {
 
   const clearPopups =()=>{
     Array.from(popupCard).forEach(pop=>{
-      pop.classList.remove("active")
+      pop.classList.remove("active");
+      const body = document.querySelector('.body');
+      body.style.overflow = "visible"
     })
   }
 
 const activatePopup = (id)=>{
-  const popup = document.getElementById(`${id}-popup`)
+  const popup = document.getElementById(`${id}-popup`);
+  const body = document.querySelector('.body');
   blur.classList.toggle('active');
-  popup.classList.add("active")
+  popup.classList.add("active");
+  body.style.overflow = "hidden"
 }
   // Closing pop up
   Array.from(closeButton).forEach(btn=>{
