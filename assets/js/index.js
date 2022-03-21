@@ -30,7 +30,63 @@ links.forEach((el) => {
 });
 
 document.querySelector(".active-link");
+//  Onscroll animation
 
+let section = document.querySelectorAll("section-");
+let menu = document.querySelectorAll("header nav a");
+
+window.onscroll = () => {
+  section.forEach((i) => {
+    let top = window.scrollY;
+    let offset = i.offsetTop - 150;
+    let height = i.offsetHeight;
+    let id = i.getAttribute("id");
+    // console.log(id)
+
+    if (top >= offset && top < offset + height) {
+      menu.forEach((link) => {
+        link.classList.remove("active-link");
+        document
+          .querySelector("header nav a[href*=" + id + "]")
+          .classList.add("active-link");
+      });
+    }
+  });
+};
+
+// Setting active 
+const setActive = (id) => {
+  const links = document.querySelectorAll(".active-link");
+
+  links.forEach((link) => {
+    link.classList.remove("active-link");
+  });
+  const active = document.getElementById(`nav-${id}`);
+  active.classList.add("active-link");
+};
+
+function reveal() {
+
+  const reveals = document.querySelectorAll(".reveal");
+  const sections = document.querySelectorAll(".section");
+
+  for (let i = 1; i < reveals.length+1; i++) {
+    const windowHeight = window.innerHeight;
+    const elementTop = reveals[i].getBoundingClientRect().top;
+    const elementVisible = 150;
+
+    if (elementTop < windowHeight - elementVisible) {
+      reveals[i].classList.add("active");
+      setActive(sections[i].id);
+    } else {
+      reveals[i].classList.remove("active");
+    }
+  }
+}
+
+window.addEventListener("scroll", () => {
+  reveal();
+});
 
 // Header text animations script
 const typed = new Typed(".auto-input", {
@@ -452,3 +508,5 @@ premiumPlanForm.addEventListener("submit", (e) => {
     })
     .catch((error) => console.error("Error!", error.message));
 });
+
+

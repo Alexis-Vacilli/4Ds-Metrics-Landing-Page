@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap');
 
 /* Global */
 * {
@@ -109,10 +109,12 @@ select {
 .title {
     font-size: 25px;
     letter-spacing: 1px;
-    font-weight: 900;
+    font-weight: bolder;
     margin: 0;
     color: #222;
     text-transform: uppercase;
+    text-transform: capitalize;
+    padding-top: 25px;
 }
 
 .subtitle {
@@ -120,6 +122,7 @@ select {
     text-transform: capitalize;
     color: rgba(34, 34, 34, 0.509);
     font-weight: 900;
+    margin: 0;
 }
 
 .error {
@@ -349,7 +352,7 @@ select {
 /* Section services */
 .section-services {
     overflow: visible;
-    background-color: var(--background-color);
+    background-color: #f4f6f9;
     text-align: center;
 }
 
@@ -374,7 +377,7 @@ select {
 
 .section-services .container .row .card {
     width: 23%;
-    background-color: #f4f6f9;
+    background-color: #fff;
     transition: .3s;
     cursor: pointer;
     border-radius: 5px;
@@ -676,8 +679,9 @@ ul {
 /* Section clients */
 
 .section-clients {
-    background-color: var(--background-color);
+    background-color: #f4f6f9;
     text-align: center;
+    padding-bottom: 7rem;
 }
 
 .section-clients .container {
@@ -700,7 +704,7 @@ ul {
 }
 
 .main-card .partner-cards .partner-card {
-    background: var(--secondary-background-color);
+    background: var(--background-color);
     width: calc(100% / 4 - 30px);
     padding: 30px;
     border-radius: 15px;
@@ -746,7 +750,7 @@ ul {
     height: 35px;
     width: 35px;
     color: var(--font-color);
-    background: #fff;
+    background: #f4f6f9;
     margin: 0 20px;
     border-radius: 50%;
     text-align: center;
@@ -1037,7 +1041,7 @@ form select:focus {
 }
 
 .page-container#blur.active {
-    filter: blur(20px);
+    filter: blur(5px);
     pointer-events: none;
     user-select: none;
     overflow: hidden;
@@ -1048,15 +1052,25 @@ form select:focus {
     top: 30%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 600px;
+    width: 750px;
     padding: 50px;
     box-shadow: 0 5px 30px rgba(0, 0, 0, .30);
     background: #fff;
     visibility: hidden;
     opacity: 0;
     transition: .5s;
-    border-radius: 5px;
+    border-radius: 10px;
 }
+
+/* Service pop ups */
+#define-popup,
+#design-popup,
+#develop-popup,
+#deploy-popup{
+    padding: 65px;
+}
+
+
 
 .popup h2 {}
 
@@ -1143,7 +1157,7 @@ form select:focus {
 }
 
 .popup li {
-    margin: 7px auto;
+    margin: 10px 15px;
     font-size: var(--fs-300);
 
 }
@@ -1152,7 +1166,7 @@ form select:focus {
 
 .popup-form-title {
     text-align: center;
-    font-size: 16.5px;
+    font-size: 15.5px;
 }
 
 .popup select {
@@ -1195,7 +1209,7 @@ form select:focus {
 
 /* Utilities */
 .container {
-    max-width: 1100px;
+    max-width: 1300px;
     margin: 0 auto;
     overflow: auto;
     padding: 0 40px;
