@@ -67,14 +67,18 @@ const setActive = (id) => {
 
 function reveal() {
 
-  const reveals = document.querySelectorAll(".reveal");
-  const sections = document.querySelectorAll(".section");
-
-  for (let i = 1; i < reveals.length+1; i++) {
+  let reveals = document.querySelectorAll(".reveal");
+  let sections = document.querySelectorAll(".section");
+  // let sectionsArray = Array.from(sections)
+  // sectionsArray.unshift(sections[0])
+  // const array = Array.from(reveals)
+  // array.unshift(reveals[0])
+  // console.log(array)
+  for (let i = 0; i <= reveals.length; i++) {
     const windowHeight = window.innerHeight;
     const elementTop = reveals[i].getBoundingClientRect().top;
     const elementVisible = 150;
-
+    console.log(i)
     if (elementTop < windowHeight - elementVisible) {
       reveals[i].classList.add("active");
       setActive(sections[i].id);

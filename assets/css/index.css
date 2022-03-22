@@ -329,8 +329,9 @@ select {
 
 .section-about .container {
     max-width: 1200px;
-    /* align-items: baseline; */
     flex-flow: wrap;
+    /* align-items: start; */
+    margin: -4rem auto;
 
 }
 
