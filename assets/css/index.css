@@ -1345,7 +1345,9 @@ form select:focus {
     }
     
     /* Showcase section */
-
+    .section-about .container{
+        margin: -2rem auto;
+    }
     .section-about .container .video video {
        margin-bottom: 4rem;
     }
