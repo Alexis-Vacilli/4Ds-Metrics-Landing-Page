@@ -1247,8 +1247,12 @@ form select:focus {
 @media screen and (max-width: 768px) {
 
     .navbar .container {
-        /* width: 100%; */
         position: relative;
+        overflow: visible;
+        margin: 0;
+    }
+    .navbar .btn{
+        display: none;
     }
 
     .logo {
@@ -1257,11 +1261,32 @@ form select:focus {
     }
 
     nav {
-       display: none;
+       position: absolute;
+       top: 110px;
+       left: 0;
+       margin: 0;
+       background: #fff;
+       width: 105%;
+       height: 90vh;
+       transform: translateX(150%);
+       transition: transform 0.5s ease-in;
+    }
+
+    .navbar ul {
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+        text-align: center;
+    }
+    .navbar ul li{
+        padding: 20px;
+        height: 19vh;
     }
 
 
-
+    .nav-active {
+        transform: translateX(0%);
+    }
     .hamburger {
         display: block;
         position: absolute;
@@ -1365,9 +1390,14 @@ form select:focus {
     }
 
     .popup {
-        width: 90%;
+        width: 95%;
         margin-top: 20px;
+        height: 90vh;
+        overflow: auto;
     }
+    /* #define-popup, #design-popup, #develop-popup, #deploy-popup{
+        padding: 65px;
+    } */
 
     /* Footer */
     .footer-col {

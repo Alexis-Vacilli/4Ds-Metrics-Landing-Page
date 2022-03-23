@@ -19,6 +19,40 @@ const init = () => {
 
 init();
 
+// Nav slide animation on mobile phones
+
+const navSlide = () => {
+  const burger = document.querySelector('#hamburger');
+  const nav = document.querySelector('#navbar');
+  const navLinks = document.querySelectorAll('.nav-links li');
+
+  // Toggle navbar
+
+  burger.addEventListener('click', () => {
+    burger.style.color = "black";
+    nav.classList.toggle("nav-active");
+  });
+  navLinks.forEach((el) => {
+    el.addEventListener("click", () => {
+      nav.classList.remove("nav-active");
+    });
+  });
+  // Animate Links
+  navLinks.forEach((link, index) => {
+    if (link.getElementsByClassName.animation) {
+      link.getElementsByClassName.animation = "";
+    } else {
+      link.style.animation = `navLinkFade 0.5s ease forwards ${
+        index / 7 + 0.3
+      }s`;
+      // console.log(index / 7);
+    }
+  });
+
+}
+navSlide();
+
+
 // active link controller
 const links = document.querySelectorAll(".links");
 
@@ -69,11 +103,7 @@ function reveal() {
 
   let reveals = document.querySelectorAll(".reveal");
   let sections = document.querySelectorAll(".section");
-  // let sectionsArray = Array.from(sections)
-  // sectionsArray.unshift(sections[0])
-  // const array = Array.from(reveals)
-  // array.unshift(reveals[0])
-  // console.log(array)
+  console.log(reveals)
   for (let i = 0; i <= reveals.length; i++) {
     const windowHeight = window.innerHeight;
     const elementTop = reveals[i].getBoundingClientRect().top;
@@ -246,6 +276,7 @@ const validation = () => {
   const email = document.querySelector("#contact-email");
   const message = document.querySelector("#message");
   const failure = document.querySelector("#failure");
+  console.log(failure);
 
   // Validating name
   if (name.value === "") {
@@ -329,7 +360,6 @@ signInForm.addEventListener("submit", (e) => {
       subscribeBtn.style.display = "none";
       subscribeBtn.classList.remove("button-loading");
       setTimeout(() => {
-        removeActive();
         removeBlur();
         success.style.display = "none";
       }, 1000);
@@ -373,7 +403,6 @@ getStartedForm.addEventListener("submit", (e) => {
       subscribeBtn.classList.remove("button-loading");
       clearFields();
       setTimeout(() => {
-        removeActive();
         removeBlur();
         success.style.display = "none";
       }, 1000);
@@ -416,7 +445,6 @@ freePlanForm.addEventListener("submit", (e) => {
       subscribeBtn.classList.remove("button-loading");
       clearFields();
       setTimeout(() => {
-        removeActive();
         removeBlur();
         success.style.display = "none";
       }, 1000);
@@ -459,7 +487,6 @@ standardPlanForm.addEventListener("submit", (e) => {
       subscribeBtn.classList.remove("button-loading");
       clearFields();
       setTimeout(() => {
-        removeActive();
         removeBlur();
         success.style.display = "none";
       }, 1000);
@@ -502,7 +529,6 @@ premiumPlanForm.addEventListener("submit", (e) => {
       subscribeBtn.classList.remove("button-loading");
       clearFields();
       setTimeout(() => {
-        removeActive();
         removeBlur();
         success.style.display = "none";
       }, 1000);
