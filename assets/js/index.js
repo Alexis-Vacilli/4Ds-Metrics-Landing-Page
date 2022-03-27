@@ -1,3 +1,7 @@
+// Global variable
+
+
+
 // Page preloader
 
 const loader = document.querySelector(".loader");
@@ -331,7 +335,7 @@ const emailValidation = (email, failure) => {
 // Sign in form
 
 const scriptURLTwo =
-  "https://script.google.com/macros/s/AKfycbzPgn5nbBm_5plZoN5bnmIs9exNP3VpkQsH5ULuvw_Y42BQIA9N2dy2IRwK10CuOayU/exec";
+  "https://script.google.com/macros/s/AKfycbwzPw05pdAeVlBZak4r_Y_SPZ5v_OH2-lbcRGXbVCCx_mvAktHjiOwN8LJQC1Z4SIi9/exec";
 
 const signInForm = document.getElementById("sign-in-form");
 
@@ -360,7 +364,8 @@ signInForm.addEventListener("submit", (e) => {
       subscribeBtn.style.display = "none";
       subscribeBtn.classList.remove("button-loading");
       setTimeout(() => {
-        removeBlur();
+        clearPopups();
+        blur.classList.remove('active');
         success.style.display = "none";
       }, 1000);
       setTimeout(() => {
@@ -374,7 +379,7 @@ signInForm.addEventListener("submit", (e) => {
 // Get started
 
 const scriptURLSix =
-  "https://script.google.com/macros/s/AKfycbyvHdv3bwB7DjPZ5vhKG-h0PKT_PctJLqtH0KMUl6DgCSYKEWeLJPOrChm8dDOt941_/exec";
+  "https://script.google.com/macros/s/AKfycbxWA1Pa01FMAd9PQlYNB0QNr0dh4H-DdRVpZYVEGl6NEwsZCTopmjBGITGsuRrTN9IO6Q/exec";
 
 const getStartedForm = document.getElementById("get-started-form");
 getStartedForm.addEventListener("submit", (e) => {
@@ -403,19 +408,21 @@ getStartedForm.addEventListener("submit", (e) => {
       subscribeBtn.classList.remove("button-loading");
       clearFields();
       setTimeout(() => {
-        removeBlur();
         success.style.display = "none";
+        clearPopups();
+        blur.classList.remove('active');
       }, 1000);
       setTimeout(() => {
         subscribeBtn.style.display = "block";
       }, 2000);
     })
     .catch((error) => console.error("Error!", error.message));
+    
 });
 
 // Free plan form
 const scriptURLThree =
-  "https://script.google.com/macros/s/AKfycbwGlVLpKpHtY_a2qi8xUsw1TnuOV_TcWeREcWMrLtAI4xMB9OA55WkH8lTBrIXAg_PW6Q/exec";
+  "https://script.google.com/macros/s/AKfycbwmbYHk91eDK13ji7DginjkQTyE6QV_T0YnQUTynecobJ61LqPAKn0JWrYLfk6rwJL6ig/exec";
 
 const freePlanForm = document.getElementById("start-popup-free");
 console.log(freePlanForm)
@@ -445,8 +452,9 @@ freePlanForm.addEventListener("submit", (e) => {
       subscribeBtn.classList.remove("button-loading");
       clearFields();
       setTimeout(() => {
-        removeBlur();
         success.style.display = "none";
+        clearPopups();
+        blur.classList.remove('active');
       }, 1000);
       setTimeout(() => {
         subscribeBtn.style.display = "block";
@@ -458,7 +466,7 @@ freePlanForm.addEventListener("submit", (e) => {
 // Standard plan form
 
 const scriptURLFour =
-  "https://script.google.com/macros/s/AKfycbxbatlCT0UX7TNhcfTcPw7IbYA75ahStnxniR83WdGYeivruo5saEcR-k3LUGfxBnGC/exec";
+  "https://script.google.com/macros/s/AKfycbyT2arGbZFqoN8H10y55OIFVSLFCD0tjex1rJOuq8ceI2qy50ZNcJMHFC3g5Fr9Sd7k/exec";
 
 const standardPlanForm = document.getElementById("standard-plan-form");
 standardPlanForm.addEventListener("submit", (e) => {
@@ -487,8 +495,9 @@ standardPlanForm.addEventListener("submit", (e) => {
       subscribeBtn.classList.remove("button-loading");
       clearFields();
       setTimeout(() => {
-        removeBlur();
         success.style.display = "none";
+        clearPopups();
+        blur.classList.remove('active');
       }, 1000);
       setTimeout(() => {
         subscribeBtn.style.display = "block";
@@ -500,7 +509,7 @@ standardPlanForm.addEventListener("submit", (e) => {
 // Premium plan form
 
 const scriptURLFive =
-  "https://script.google.com/macros/s/AKfycbyJc8Tem_-7_AnJjaDNRJaoMzQzRe4pr77ePEf-e8bqbWJj2jQ2CeJm3uhls2JNQKjd/exec";
+  "https://script.google.com/macros/s/AKfycbyLt-nTe_0p4EadmO0cCVXGP9byeJuN1sh4pWWgZX5UnTKXjx8nJIkEqLMldG8jKsYb/exec";
 
 const premiumPlanForm = document.getElementById("premium-plan-form");
 premiumPlanForm.addEventListener("submit", (e) => {
@@ -529,8 +538,9 @@ premiumPlanForm.addEventListener("submit", (e) => {
       subscribeBtn.classList.remove("button-loading");
       clearFields();
       setTimeout(() => {
-        removeBlur();
         success.style.display = "none";
+        clearPopups();
+        blur.classList.remove('active');
       }, 1000);
       setTimeout(() => {
         subscribeBtn.style.display = "block";

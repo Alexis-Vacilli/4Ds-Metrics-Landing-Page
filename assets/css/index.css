@@ -189,6 +189,16 @@ select {
     animation: button-loading-spinner 1s ease infinite;
 }
 
+@keyframes button-loading-spinner {
+    from {
+        transform: rotate(0turn);
+    }
+
+    to {
+        transform: rotate(1turn);
+    }
+}
+
 /* Preloader  */
 .loader-container{
     font-size: 18px;
