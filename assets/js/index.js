@@ -371,7 +371,7 @@ signInForm.addEventListener("submit", (e) => {
       setTimeout(() => {
         subscribeBtn.style.display = "block";
       }, 2000);
-      clearFields();
+      email.value = "";
     })
     .catch((error) => console.error("Error!", error.message));
 });
@@ -406,7 +406,6 @@ getStartedForm.addEventListener("submit", (e) => {
       success.style.display = "block";
       subscribeBtn.style.display = "none";
       subscribeBtn.classList.remove("button-loading");
-      clearFields();
       setTimeout(() => {
         success.style.display = "none";
         clearPopups();
@@ -415,6 +414,7 @@ getStartedForm.addEventListener("submit", (e) => {
       setTimeout(() => {
         subscribeBtn.style.display = "block";
       }, 2000);
+      email.value = "";
     })
     .catch((error) => console.error("Error!", error.message));
     
@@ -450,7 +450,6 @@ freePlanForm.addEventListener("submit", (e) => {
       success.style.display = "block";
       subscribeBtn.style.display = "none";
       subscribeBtn.classList.remove("button-loading");
-      clearFields();
       setTimeout(() => {
         success.style.display = "none";
         clearPopups();
@@ -459,6 +458,7 @@ freePlanForm.addEventListener("submit", (e) => {
       setTimeout(() => {
         subscribeBtn.style.display = "block";
       }, 2000);
+      email.value = "";
     })
     .catch((error) => console.error("Error!", error.message));
 });
@@ -493,7 +493,6 @@ standardPlanForm.addEventListener("submit", (e) => {
       success.style.display = "block";
       subscribeBtn.style.display = "none";
       subscribeBtn.classList.remove("button-loading");
-      clearFields();
       setTimeout(() => {
         success.style.display = "none";
         clearPopups();
@@ -502,6 +501,7 @@ standardPlanForm.addEventListener("submit", (e) => {
       setTimeout(() => {
         subscribeBtn.style.display = "block";
       }, 2000);
+      email.value = "";
     })
     .catch((error) => console.error("Error!", error.message));
 });
@@ -536,7 +536,6 @@ premiumPlanForm.addEventListener("submit", (e) => {
       success.style.display = "block";
       subscribeBtn.style.display = "none";
       subscribeBtn.classList.remove("button-loading");
-      clearFields();
       setTimeout(() => {
         success.style.display = "none";
         clearPopups();
@@ -545,6 +544,7 @@ premiumPlanForm.addEventListener("submit", (e) => {
       setTimeout(() => {
         subscribeBtn.style.display = "block";
       }, 2000);
+      email.value = "";
     })
     .catch((error) => console.error("Error!", error.message));
 });
