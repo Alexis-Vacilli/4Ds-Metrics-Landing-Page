@@ -1043,7 +1043,8 @@ form select:focus {
     transform: translateX(-50%);
     bottom: 15px;
     color: rgb(255, 255, 255);
-    font-weight: 100;
+    font-weight: 500;
+    opacity: .5;
 
 }
 
